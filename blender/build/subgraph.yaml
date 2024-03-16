@@ -1,0 +1,32 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum
+    name: ETHBlender
+    network: polygon-amoy
+    source:
+      address: "0x06c38E07fFd34Cbb1FF86617ef0d20A71FCE6039"
+      abi: ETHBlender
+      startBlock: 4684114
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Deposit
+        - Swap
+        - Withdrawal
+      abis:
+        - name: ETHBlender
+          file: ETHBlender/abis/ETHBlender.json
+      eventHandlers:
+        - event: Deposit(indexed uint256,uint256,uint256,uint256,uint32)
+          handler: handleDeposit
+        - event: Swap(address,uint256,uint256,uint256,indexed address,address,uint256)
+          handler: handleSwap
+        - event: Withdrawal(address,uint256,uint256,uint256,indexed address)
+          handler: handleWithdrawal
+      file: ETHBlender/ETHBlender.wasm
