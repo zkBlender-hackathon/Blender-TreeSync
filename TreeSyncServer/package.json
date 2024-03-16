@@ -1,0 +1,39 @@
+{
+  "name": "node-typescript-starter",
+  "version": "1.0.0",
+  "description": "Node project starter with Typescript, ESLint and Prettier",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node ./src/index.ts",
+    "dev": "nodemon --watch \"*.ts\" --exec \"ts-node\" ./src/index.ts",
+    "eslint:fix": "eslint --fix"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.15.2",
+    "@typescript-eslint/eslint-plugin": "^5.55.0",
+    "@typescript-eslint/parser": "^5.55.0",
+    "circomlib": "git+https://github.com/tornadocash/circomlib.git#c372f14d324d57339c88451834bf2824e73bbdbc",
+    "circomlibjs": "^0.0.8",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-sort-destructure-keys": "^1.5.0",
+    "fixed-merkle-tree": "^0.7.3",
+    "nodemon": "^2.0.21",
+    "prettier": "^2.8.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "axios": "^1.6.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "ethers": "^6.10.0",
+    "express": "^4.18.2",
+    "graphql": "^16.8.1",
+    "graphql-request": "^5.1.0"
+  }
+}
